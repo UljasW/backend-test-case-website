@@ -2,7 +2,7 @@ import React from "react";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 
-export default function header() {
+export default function Header() {
   return (
     <div
       style={{
