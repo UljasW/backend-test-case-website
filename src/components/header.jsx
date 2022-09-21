@@ -14,10 +14,10 @@ export default function Header() {
       }}
     >
       <div style={{ display: "flex", with: "500px" }}>
-        <Link to="/search" className="btn" style={{ textDecoration: "none" }}>
+        <Link to="/" className="btn" style={{ textDecoration: "none" }}>
           <Button variant="primary">Search users</Button>
         </Link>
-        <Link to="/accounts" className="btn" style={{ textDecoration: "none" }}>
+        <Link to="/manageAccount" className="btn" style={{ textDecoration: "none" }}>
           <Button variant="primary">Manage account</Button>
         </Link>
       </div>

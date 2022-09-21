@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import Header from './components/Header';
 import 'bootstrap/dist/css/bootstrap.css';
+import Main from './components/Main';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
