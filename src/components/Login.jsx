@@ -1,8 +1,10 @@
 import React from 'react'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { useEffect } from 'react';
 
 export default function Login() {
+
   return (
     <Form>
       <Form.Group className="mb-3" >
@@ -16,7 +18,7 @@ export default function Login() {
       </Form.Group>
       <div style={{"display" : "flex", "flexDirection" : "row"}}>
       <Button variant="primary" type="submit">
-        Submit
+        Login
       </Button>
       <Button variant="primary" type="submit">
         Forgot password

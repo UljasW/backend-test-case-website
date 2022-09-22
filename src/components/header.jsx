@@ -15,10 +15,16 @@ export default function Header() {
     >
       <div style={{ display: "flex", with: "500px" }}>
         <Link to="/" className="btn" style={{ textDecoration: "none" }}>
-          <Button variant="primary">Search users</Button>
+          <Button variant="primary">Home</Button>
         </Link>
-        <Link to="/manageAccount" className="btn" style={{ textDecoration: "none" }}>
-          <Button variant="primary">Manage account</Button>
+        <Link to="/login" className="btn" style={{ textDecoration: "none" }}>
+          <Button variant="primary">Login</Button>
+        </Link>
+        <Link to="/register" className="btn" style={{ textDecoration: "none" }}>
+          <Button variant="primary">Register</Button>
+        </Link>
+        <Link to="/delete" className="btn" style={{ textDecoration: "none" }}>
+          <Button variant="primary">Delete account</Button>
         </Link>
       </div>
     </div>

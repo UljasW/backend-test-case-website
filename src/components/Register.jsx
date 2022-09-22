@@ -20,7 +20,7 @@ export default function Register() {
         <Form.Control type="password" placeholder="Password" />
       </Form.Group>
       <Button variant="primary" type="submit">
-        Submit
+        Register
       </Button>
     </Form>
 
