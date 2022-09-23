@@ -20,7 +20,7 @@ export default function Login() {
       method: "POST",
       headers: { "Authorization" : "bearer {token}" },
       body: JSON.stringify({ 
-        UserName : username,
+        Username : username,
         Password: password }),
     };
     const response = await fetch("https://reqres.in/api/posts", requestOptions)
