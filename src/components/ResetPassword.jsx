@@ -28,7 +28,7 @@ export default function ResetPassword() {
           'Accept': 'application/json'
         },
         body: JSON.stringify({
-          Token: ResetToken,
+          Token: ResetToken.get("token"),
           NewPassword: password
         })
       });
