@@ -15,16 +15,24 @@ export default function Login() {
     setUsername(event.target.value);
   }
 
-  async function Submit() {
-    const requestOptions = {
-      method: "POST",
-      headers: { "Authorization" : "bearer {token}" },
-      body: JSON.stringify({ 
-        Username : username,
-        Password: password }),
-    };
-    const response = await fetch("https://reqres.in/api/posts", requestOptions)
+  async function Submit(e) {
+    e.preventDefault()
+
+    const response = await fetch("http://demonewspaper-001-site1.btempurl.com/api/Users/Login", {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: { 
+        username : username,
+        password: password 
+      }});
+
     const data = await response.json();
+    console.log(data.value);
+
+    if(response.status === 200)
+    {
+      localStorage.setItem("AccessToken", data);
+    }
 
   }
 
@@ -48,10 +56,10 @@ export default function Login() {
         />
       </Form.Group>
       <div style={{ display: "flex", flexDirection: "row" }}>
-        <Button variant="primary" type="submit">
+        <Button variant="primary" type="submit" onClick={Submit}>
           Login
         </Button>
-        <Button variant="primary" type="submit" onClick={Submit}>
+        <Button variant="primary" type="submit">
           Forgot password
         </Button>
       </div>
