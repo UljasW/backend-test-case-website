@@ -27,6 +27,7 @@ export default function Register() {
     const response = await fetch("http://demonewspaper-001-site1.btempurl.com/api/users/register", {
       method: 'POST',
       headers : { 
+        'Access-Control-Allow-Origin':'*',
         'Content-Type': 'application/json',
         'Accept': 'application/json'
        },

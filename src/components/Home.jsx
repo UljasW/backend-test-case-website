@@ -4,6 +4,7 @@ import Form from 'react-bootstrap/Form';
 import { useState } from 'react';
 import { useEffect } from 'react';
 
+
 export default function Home() {
 
   const [data, setData] = useState([]);
@@ -11,17 +12,17 @@ export default function Home() {
 
   useEffect(() => {
     fetchAllUsers();
-  });
+  }, []);
 
   function HandleSearchChange(event) {
     setSearch(event.target.value);
   }
 
-  async function Submit(e) {
+  async function submit(e) {
     e.preventDefault()
 
     const response = await fetch("http://demonewspaper-001-site1.btempurl.com/api/Users/searchUsers", {
-      method: 'GET',
+      method: 'POST',
       headers : { 
         'Content-Type': 'application/json',
         'Accept': 'application/json',
@@ -30,9 +31,9 @@ export default function Home() {
       body: JSON.stringify({ 
         Search : search
       })});
-
+      
     const data = await response.json();
-    setSearch(data);
+    setData(data);
 
   }
 
@@ -46,33 +47,35 @@ export default function Home() {
         'Authorization': `Bearer ${localStorage.getItem("AccessToken")}`
       }
     });
+    
     setData(await response.json())
   }
 
 
   return (
-    <div>
+    <div style={{"margin" : "20px"}}>
+      <h3 >Login to use this function</h3>
       <Form>
         <Form.Group className="mb-3">
           <Form.Label>Search user</Form.Label>
           <Form.Control placeholder="Enter search" onChange={HandleSearchChange}/>
         </Form.Group>
 
-        <Button variant="primary" type="submit">
+        <Button variant="primary" type="submit" onClick={submit}>
           Submit
         </Button>
       </Form>
       <div>
-        <SearchResult/>
+        
+        <SearchResult data = {data}/>
       </div>
     </div>
   );
 }
 
-function SearchResult() {
-  return(
-    <div>
-      
-    </div>
-  )
+function SearchResult(props) {
+  
+  return props.data.map((user, index) => (
+    <div style={{"margin" : "20px", "background" : "Aqua"}}> <h5>Username: {user.username}</h5> <h5>Email: {user.email}</h5></div>
+  ))
 }

@@ -28,6 +28,7 @@ export default function ForgotPassword() {
             method: 'POST',
             mode: "cors",
             headers: {
+                'Access-Control-Allow-Origin':'*',
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
             },

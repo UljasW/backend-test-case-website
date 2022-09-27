@@ -23,6 +23,7 @@ export default function Login() {
     const response = await fetch("http://demonewspaper-001-site1.btempurl.com/api/Users/login", {
       method: 'POST',
       headers : { 
+        'Access-Control-Allow-Origin':'*',
         'Content-Type': 'application/json',
         'Accept': 'application/json'
        },
@@ -35,7 +36,7 @@ export default function Login() {
   
     if(response.status === 200)
     {
-      alert("User logdin")
+      alert("User is logged in")
       localStorage.setItem("AccessToken", data);
     }else{
       alert(data)
