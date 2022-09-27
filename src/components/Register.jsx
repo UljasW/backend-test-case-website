@@ -1,7 +1,7 @@
 import React from 'react'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function Register() {
   const [username, setUsername] = useState("");
@@ -21,18 +21,26 @@ export default function Register() {
     setPassword(event.target.value);
   }
 
-  async function Submit() {
-    const requestOptions = {
-      method: "POST",
-      body: JSON.stringify({
+  async function Submit(e) {
+    e.preventDefault()
+
+    const response = await fetch("http://demonewspaper-001-site1.btempurl.com/api/users/register", {
+      method: 'POST',
+      headers : { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+       },
+       body: JSON.stringify({
         username: username,
         email: email,
         password: password
-      }),
-    };
-    const response = await fetch("http://demonewspaper-001-site1.btempurl.com/api/Users/Register", requestOptions)
-    const data = await response.json();
-    console.log(data)
+      })});
+
+    if(response.status === 200)
+    {
+      alert("User has been registered");
+    }
+    else {alert("Somthing went wrong");}
   }
 
   return (

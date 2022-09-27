@@ -4,9 +4,9 @@ import './index.css';
 import {
   BrowserRouter as Router,
 } from "react-router-dom";
-import Header from './components/Header';
+import Header from './components/header';
 import 'bootstrap/dist/css/bootstrap.css';
-import Main from './components/Main';
+import Main from './components/main';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

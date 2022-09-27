@@ -1,7 +1,9 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+
 
 export default function Login() {
   const [password, setPassword] = useState("");
@@ -18,20 +20,25 @@ export default function Login() {
   async function Submit(e) {
     e.preventDefault()
 
-    const response = await fetch("http://demonewspaper-001-site1.btempurl.com/api/Users/Login", {
+    const response = await fetch("http://demonewspaper-001-site1.btempurl.com/api/Users/login", {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: { 
+      headers : { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+       },
+      body: JSON.stringify({ 
         username : username,
         password: password 
-      }});
+      })});
 
     const data = await response.json();
-    console.log(data.value);
-
+  
     if(response.status === 200)
     {
+      alert("User logdin")
       localStorage.setItem("AccessToken", data);
+    }else{
+      alert("Somthing went wrong!")
     }
 
   }
@@ -59,9 +66,9 @@ export default function Login() {
         <Button variant="primary" type="submit" onClick={Submit}>
           Login
         </Button>
-        <Button variant="primary" type="submit">
-          Forgot password
-        </Button>
+        <Link to="/forgotpassword" className="btn" style={{ textDecoration: "none" }}>
+          <Button variant="primary">Forgot password</Button>
+        </Link>
       </div>
     </Form>
   );
