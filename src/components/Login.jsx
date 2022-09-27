@@ -10,16 +10,17 @@ export default function Login() {
   const [username, setUsername] = useState("");
 
   function HandleUsernameChange(event) {
-    setPassword(event.target.value);
+    setUsername(event.target.value);
   }
 
   function HandlePasswordChange(event) {
-    setUsername(event.target.value);
+    setPassword(event.target.value);
   }
 
   async function Submit(e) {
     e.preventDefault()
-
+    console.log(username)
+    console.log(password)
     const response = await fetch("http://demonewspaper-001-site1.btempurl.com/api/Users/login", {
       method: 'POST',
       headers : { 
