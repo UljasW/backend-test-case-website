@@ -24,23 +24,26 @@ export default function ForgotPassword() {
     async function Submit(e) {
         e.preventDefault()
 
-        const response = await fetch("http://demonewspaper-001-site1.btempurl.com/api/users/forgotpassword", {
+        const response = await fetch("http://demonewspaper-001-site1.btempurl.com/api/Users/forgotPassword", {
             method: 'POST',
+            mode: "cors",
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
             },
             body: JSON.stringify({
-                etherealEmailAddress : etherealEmailAddress,
-                etherealPassword : etherealPassword,
-                email: email,
+                etherealEmailAddress: etherealEmailAddress,
+                etherealPassword: etherealPassword,
+                email: email
             })
         });
 
+        const data = await response.json();
+
         if (response.status === 200) {
-            alert("Email sent");
+            alert("Email sent")
         } else {
-            alert("Somthing went wrong!");
+            alert(data)
         }
     }
     return (
@@ -57,7 +60,7 @@ export default function ForgotPassword() {
             <Form.Group className="mb-3">
                 <Form.Label>Ethereal password</Form.Label>
                 <Form.Control
-                    type="email"
+                    type="password"
                     placeholder="Enter Ethereal password"
                     onChange={HandleEtherealPasswordChange}
                 />

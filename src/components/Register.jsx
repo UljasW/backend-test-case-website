@@ -35,12 +35,13 @@ export default function Register() {
         email: email,
         password: password
       })});
+      const data = await response.json();
 
     if(response.status === 200)
     {
       alert("User has been registered");
     }
-    else {alert("Somthing went wrong");}
+    else {alert(data);}
   }
 
   return (

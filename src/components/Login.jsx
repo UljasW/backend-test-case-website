@@ -38,7 +38,7 @@ export default function Login() {
       alert("User logdin")
       localStorage.setItem("AccessToken", data);
     }else{
-      alert("Somthing went wrong!")
+      alert(data)
     }
 
   }
