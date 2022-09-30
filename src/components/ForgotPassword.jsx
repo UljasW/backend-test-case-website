@@ -26,7 +26,6 @@ export default function ForgotPassword() {
 
         const response = await fetch("https://demonewspaper.azurewebsites.net/api/Users/forgotPassword", {
             method: 'POST',
-            mode: "cors",
             headers: {
                 'Access-Control-Allow-Origin':'*',
                 'Content-Type': 'application/json',
