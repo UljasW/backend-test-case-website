@@ -24,7 +24,7 @@ export default function Register() {
   async function Submit(e) {
     e.preventDefault()
 
-    const response = await fetch("http://demonewspaper-001-site1.btempurl.com/api/users/register", {
+    const response = await fetch("https://demonewspaper.azurewebsites.net/api/users/register", {
       method: 'POST',
       headers : { 
         'Access-Control-Allow-Origin':'*',

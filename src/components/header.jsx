@@ -26,6 +26,10 @@ export default function Header() {
         <Link to="/delete" className="btn" style={{ textDecoration: "none" }}>
           <Button variant="primary">Delete account</Button>
         </Link>
+
+        <Button className="btn" variant="primary">Logout</Button>
+
+
       </div>
     </div>
   );

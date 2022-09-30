@@ -21,7 +21,7 @@ export default function Login() {
     e.preventDefault()
     console.log(username)
     console.log(password)
-    const response = await fetch("http://demonewspaper-001-site1.btempurl.com/api/Users/login", {
+    const response = await fetch("https://demonewspaper.azurewebsites.net/api/Users/login", {
       method: 'POST',
       headers : { 
         'Access-Control-Allow-Origin':'*',

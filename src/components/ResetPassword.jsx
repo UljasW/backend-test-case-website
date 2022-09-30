@@ -21,7 +21,7 @@ export default function ResetPassword() {
   async function Submit(e) {
     e.preventDefault()
     if (password === password2) {
-      const response = await fetch("http://demonewspaper-001-site1.btempurl.com/api/Users/resetpassword", {
+      const response = await fetch("https://demonewspaper.azurewebsites.net/api/Users/resetpassword", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

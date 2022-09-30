@@ -5,7 +5,7 @@ export default function Delete() {
   async function deleteUser(e) {
     e.preventDefault()
 
-    const response = await fetch("http://demonewspaper-001-site1.btempurl.com/api/Users/delete", {
+    const response = await fetch("https://demonewspaper.azurewebsites.net/api/Users/delete", {
       method: 'DELETE',
       headers : { 
         'Content-Type': 'application/json',

@@ -24,7 +24,7 @@ export default function ForgotPassword() {
     async function Submit(e) {
         e.preventDefault()
 
-        const response = await fetch("http://demonewspaper-001-site1.btempurl.com/api/Users/forgotPassword", {
+        const response = await fetch("https://demonewspaper.azurewebsites.net/api/Users/forgotPassword", {
             method: 'POST',
             mode: "cors",
             headers: {

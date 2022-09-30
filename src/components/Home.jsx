@@ -21,7 +21,7 @@ export default function Home() {
   async function submit(e) {
     e.preventDefault()
 
-    const response = await fetch("http://demonewspaper-001-site1.btempurl.com/api/Users/searchUsers", {
+    const response = await fetch("https://demonewspaper.azurewebsites.net/api/Users/searchUsers", {
       method: 'POST',
       headers : { 
         'Content-Type': 'application/json',
@@ -39,7 +39,7 @@ export default function Home() {
 
 
   async function fetchAllUsers() {
-    const response = await fetch("http://demonewspaper-001-site1.btempurl.com/api/users/getallusers", {
+    const response = await fetch("https://demonewspaper.azurewebsites.net/api/users/getallusers", {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
