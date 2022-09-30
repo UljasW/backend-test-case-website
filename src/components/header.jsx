@@ -27,9 +27,6 @@ export default function Header() {
           <Button variant="primary">Delete account</Button>
         </Link>
 
-        <Button className="btn" variant="primary">Logout</Button>
-
-
       </div>
     </div>
   );
