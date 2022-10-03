@@ -40,14 +40,14 @@ export default function ForgotPassword() {
                 <Form.Label>Email</Form.Label>
                 <Form.Control
                     type="email"
-                    placeholder="Enter email (also Ethereal email address)"
+                    placeholder="Enter email"
                     onChange={HandleEmailChange}
                 />
             </Form.Group>
 
             <div style={{ display: "flex", flexDirection: "row" }}>
                 <Button variant="primary" type="submit" onClick={Submit}>
-                    Login
+                    Send
                 </Button>
             </div>
         </Form>
