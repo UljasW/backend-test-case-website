@@ -3,6 +3,12 @@ import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 
 export default function Header() {
+  
+  function logout()
+  {
+    localStorage.removeItem("AccessToken");
+    window.location.reload();
+  }
   return (
     <div
       style={{
@@ -26,6 +32,9 @@ export default function Header() {
         <Link to="/delete" className="btn" style={{ textDecoration: "none" }}>
           <Button variant="primary">Delete account</Button>
         </Link>
+        <div className="btn">
+          <Button onClick={logout} variant="primary">Logout</Button>
+        </div>
 
       </div>
     </div>

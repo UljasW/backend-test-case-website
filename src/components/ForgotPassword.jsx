@@ -4,18 +4,7 @@ import Form from 'react-bootstrap/Form';
 import { useState } from "react";
 
 export default function ForgotPassword() {
-    const [etherealEmailAddress, setEtherealEmailAddress] = useState("");
-    const [etherealPassword, setEtherealPassword] = useState("");
-
     const [email, setEmail] = useState("");
-
-    function HandleEtherealEmailAddressChange(event) {
-        setEtherealEmailAddress(event.target.value);
-    }
-
-    function HandleEtherealPasswordChange(event) {
-        setEtherealPassword(event.target.value);
-    }
 
     function HandleEmailChange(event) {
         setEmail(event.target.value);
@@ -32,8 +21,6 @@ export default function ForgotPassword() {
                 'Accept': 'application/json'
             },
             body: JSON.stringify({
-                etherealEmailAddress: etherealEmailAddress,
-                etherealPassword: etherealPassword,
                 email: email
             })
         });
@@ -48,23 +35,6 @@ export default function ForgotPassword() {
     }
     return (
         <Form>
-            <Form.Group className="mb-3">
-                <Form.Label>Ethereal email address</Form.Label>
-                <Form.Control
-                    type="email"
-                    placeholder="Enter Ethereal email-address"
-                    onChange={HandleEtherealEmailAddressChange}
-                />
-            </Form.Group>
-
-            <Form.Group className="mb-3">
-                <Form.Label>Ethereal password</Form.Label>
-                <Form.Control
-                    type="password"
-                    placeholder="Enter Ethereal password"
-                    onChange={HandleEtherealPasswordChange}
-                />
-            </Form.Group>
 
             <Form.Group className="mb-3">
                 <Form.Label>Email</Form.Label>
